@@ -1,0 +1,56 @@
+.size-12 {
+  font-size: 12px;
+}
+
+.size-13 {
+  font-size: 13px;
+}
+
+.size-17 {
+  font-size: 17px;
+}
+
+.page-content {
+  background: #eee;
+}
+
+.row {
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+
+/* 文章列表样式 */
+
+.node .header .category {
+  text-align: center;
+}
+
+.node .header .title {
+  font-weight: 200;
+  padding-top: 10px;
+}
+
+.node .header .author, .node .content .forward {
+  padding: 10px 0;
+}
+
+.node .footer {
+  padding: 15px 0;
+}
+
+.node .footer > a {
+  font-size: 12px;
+  color: gray;
+}
+
+.node .footer > a .icon {
+  font-size: 15px;
+  color: gray;
+}
+
+.node .footer > a.link {
+  float: right;
+  padding-left: 15px;
+}
