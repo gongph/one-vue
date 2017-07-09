@@ -1,27 +1,88 @@
-.size-12 {
-  font-size: 12px;
-}
+/*
+ * global
+ */
 
-.size-13 {
-  font-size: 13px;
-}
+.size-12 {font-size: 12px;}
+.size-14 {font-size: 14px;}
+.size-16 {font-size: 16px;}
+.size-17 {font-size: 17px;}
+.size-20 {font-size: 20px;}
+.size-25 {font-size: 25px;}
 
-.size-17 {
-  font-size: 17px;
-}
-
-.page-content {
-  background: #eee;
+.navbar-fixed .page-content, .navbar-through .page-content {
+	background: #eee;
 }
 
 .row {
-  padding: 5px 15px;
   margin-bottom: 10px;
   background: #fff;
 }
 
+/* 文章列表底部工具条 */
+.footerbar {
+  padding: 15px 0 5px 0;
+}
 
-/* 文章列表样式 */
+.footerbar > a {
+  font-size: 12px;
+  color: gray;
+}
+
+.footerbar > a .icon {
+  font-size: 15px;
+  color: gray;
+}
+
+.footerbar > a.link {
+  float: right;
+  padding-left: 15px;
+}
+
+/* home */
+.home-page .page-content {
+	padding-top: 0;
+}
+
+.home-page .row:first-child {
+	margin-bottom: 0;
+}
+
+.page .weather {
+	text-align: center;
+  padding: 5px 0;
+}
+
+.page .poster .volume {
+	position: absolute;
+	padding: 5px 7px;
+	color: #fff;
+}
+
+.page .poster .pic_info {
+	text-align: center;
+  padding-top: 5px;
+}
+
+.page .poster .forward {
+  padding: 15px 30px;
+  text-align: justify;
+  line-height: 2;
+}
+
+.page .poster .words_info {
+	text-align: center;
+}
+
+.page .footerbar.note {
+	padding: 18px 10px 10px 10px;
+}
+
+
+/* 文章列表页  */
+
+.node-row {
+	padding: 5px 15px;
+}
 
 .node .header .category {
   text-align: center;
@@ -33,24 +94,64 @@
 }
 
 .node .header .author, .node .content .forward {
-  padding: 10px 0;
+  padding: 8px 1px;
+  text-align: justify;
+  line-height: 1.7;
 }
 
-.node .footer {
-  padding: 15px 0;
+/* 文章详情页 */
+.page .article-row {
+  padding: 30px 20px;
 }
 
-.node .footer > a {
-  font-size: 12px;
-  color: gray;
+.page .article .hp_split {
+  height: 4px;
+  background: #000;
+  width: 25vw;
+  margin: 15px 0;
 }
 
-.node .footer > a .icon {
-  font-size: 15px;
-  color: gray;
+.page .article .hp_content {
+  text-align: justify;
+  line-height: 2;
 }
 
-.node .footer > a.link {
-  float: right;
+.page .author_info {
+  margin-top: 30px;
+}
+
+.page .author_info .at_split {
+  height: 3px;
+  width: 21vw;
+  background: #000;
+  margin: 5px 0;
+}
+
+.page .author_info .hp_author_introduce {
+  padding-top: 10px;
+}
+
+.page .author_info .at_content {
+  list-style: none;
+  padding: 0;
+}
+
+.page .author_info .at_content li {
+  float: left;
+}
+
+.page .author_info .at_content img {
+  border-radius: 50%
+}
+
+.page .author_info .at_content .wb_name {
   padding-left: 15px;
+}
+
+.page .author_info .at_content .wb_name small {
+  display: block;
+}
+
+.page .author_info .at_content .follow {
+  float: right;
 }

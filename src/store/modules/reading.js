@@ -3,7 +3,7 @@ import * as types from '../mutation-types.js';
 
 // initial state
 const state = {
-  topten: ['1']
+  topten: []
 }
 
 // getters
@@ -15,8 +15,12 @@ const  getters = {
 const actions = {
   getTopTen ({ commit }) {
     server.getToptenReading().then((response) => {
-      let list = 
       commit(types.RECEIVE_TOPTEN, response.data.data);
+    });
+  },
+  getNextPageById ({ commit }, id) {
+  	server.getNextPageById(id).then((response) => {
+      commit(types.RECEIVE_NEXTPAGE, response.data.data);
     });
   }
 }
@@ -24,7 +28,11 @@ const actions = {
 // mutations
 const mutations = {
   [types.RECEIVE_TOPTEN] (state, data) {
+  	state.topten.length = 0;
     state.topten = data;
+  },
+  [types.RECEIVE_NEXTPAGE] (state, data) {
+  	state.topten = state.topten.concat(data);
   }
 }
 

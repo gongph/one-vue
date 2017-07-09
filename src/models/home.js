@@ -10,12 +10,12 @@ const reg = /\{(.+)\}/ig;
 
 export default {
   /**
-   * 获取最新10条阅读
+   * 获取首页idlist
    */
-  getToptenReading () {
-	return instance.get(api.getToptenReading);
+  getIdlist () {
+	return instance.get(api.idlist);
   },
-  getNextPageById (id) {
-  	return instance.get(api.getNextReading.replace(reg, id));
+  getHpById (id) {
+  	return instance.get(api.getHpById.replace(reg, id));
   }
 }

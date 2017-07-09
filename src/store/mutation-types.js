@@ -1,1 +1,7 @@
 export const RECEIVE_TOPTEN = 'RECEIVE_TOPTEN';
+export const RECEIVE_IDLIST = 'RECEIVE_IDLIST';
+export const RECEIVE_HP = 'RECEIVE_HP';
+export const RECEIVE_ARTICLE = 'RECEIVE_ARTICLE';
+export const RECEIVE_NEXTPAGE = 'RECEIVE_NEXTPAGE';
+
+export const WEATHER = 'WEATHER';
