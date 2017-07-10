@@ -11,11 +11,49 @@
       </f7-nav-right>
     </f7-navbar>
     
+    <!-- grids -->
+    <f7-grid class="node-row" v-for="node in this.topten" key="node.id">
+      <f7-col width="100">
+        <div class="node">
+        	<div class="header">
+        	  <div class="category color-gray size-12">- 音乐 -</div>
+        	  <div class="title size-20">{{ node.title }}</div>
+        	  <div class="author color-gray size-14">文╱{{ node.author.user_name }}</div>
+        	</div>
+        	<div class="content">
+        	  <img :src="node.img_url" width="100%" class="lazy lazy-fadein"/>
+        	  <div class="forward color-gray size-14" v-html="node.forward"></div>
+        	</div>
+        	<div class="footerbar">
+        	  <f7-link no-link-class>一天前</f7-link>
+        	  <f7-link icon-f7="share"></f7-link>
+        	  <f7-link>
+        	  	{{ node.like_count }}
+        	  	<f7-icon f7="heart"></f7-icon>
+        	  </f7-link>
+        	</div>
+        </div>
+      </f7-col>
+    </f7-grid>
+    
   </f7-page>
 </template>
 
 <script>
+	import { mapGetters, mapActions } from 'vuex';
   export default {
-    
+    computed: {
+      ...mapGetters('music', {
+        topten: 'topTen'
+      })
+    },
+    created () {
+      this.getTopTen();
+    },
+    methods: {
+      ...mapActions('music', [
+  			'getTopTen'
+  		])
+    }
   }
 </script>

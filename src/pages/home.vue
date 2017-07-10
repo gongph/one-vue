@@ -1,5 +1,7 @@
 <template>
-  <f7-page name="home" class="home-page" navbar-through tabbar-through>
+  <f7-page ref="homepage" name="home" class="home-page" 
+  	navbar-through 
+  	tabbar-through>
     <!-- navbar -->
     <!--<f7-navbar>
     	<f7-nav-left>
@@ -27,7 +29,7 @@
     		<div class="poster">
     			<div class="volume size-12">{{ this.poster.volume }}</div>
     			<div class="img_url">
-    				<img :src="this.poster.img_url" width="100%"/>
+    				<img :src="this.poster.img_url" width="100%" class="lazy lazy-fadein"/>
     			</div>
     			<div class="pic_info color-gray size-12">
     				{{ this.poster.title + ' | ' + this.poster.pic_info}}
@@ -62,7 +64,7 @@
         	  <div class="author color-gray size-14">文╱{{getUserName(node.author)}}</div>
         	</div>
         	<div class="content">
-        	  <img :src="node.img_url" width="100%"/>
+        	  <img :src="node.img_url" width="100%" class="lazy lazy-fadein"/>
         	  <div class="forward color-gray size-14" v-html="node.forward"></div>
         	</div>
         	<div class="footerbar">

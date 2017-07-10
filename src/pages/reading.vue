@@ -4,8 +4,7 @@
   	tabbar-through 
   	hide-navbar-on-scroll 
   	pull-to-refresh  
-  	infinite-scroll 
-  	infinite-scroll-distance 
+  	infinite-scroll  
   	@ptr:refresh="pullrefresh" 
   	@ptr:pullend="pullend"  
   	@infinite="infinite">
@@ -27,10 +26,10 @@
         	<div class="header">
         	  <div class="category color-gray size-12">- {{ getTag(node.tag_list) }} -</div>
         	  <div class="title size-20">{{ node.title }}</div>
-        	  <div class="author color-gray size-14">文╱{{getUserName(node.author)}}</div>
+        	  <div class="author color-gray size-14">文╱{{ node.author.user_name }}</div>
         	</div>
         	<div class="content">
-        	  <img :src="node.img_url" width="100%"/>
+        	  <img :src="node.img_url" width="100%" class="lazy lazy-fadein"/>
         	  <div class="forward color-gray size-14" v-html="node.forward"></div>
         	</div>
         	<div class="footerbar">
@@ -55,22 +54,16 @@
   
   export default {
   	mixins: [Mixins],
-    computed: mapGetters({
+    computed: mapGetters('reading', {
 		  topten: 'topTen'
 	  }),
   	created () {
-      this.$store.dispatch('getTopTen');
+  		this.getTopTen();
   	},
   	methods: {
-  		...mapActions([
+  		...mapActions('reading', [
   			'getTopTen'
   		]),
-  		/**
-  		 * 获取用户名
-  		 */
-  	  getUserName (author) {
-  	  	return author? author.user_name : '';
-  	  },
   	  /**
   		 * 获取标签
   		 */
@@ -107,7 +100,7 @@
   	   */
   	  infinite () {
 	  	  let len = this.topten.length;
-	  	  if (len > 0) this.$store.dispatch('getNextPageById', this.topten[len - 1].id);
+	  	  if (len > 0) this.$store.dispatch('reading/getNextPageById', this.topten[len - 1].id);
   	  }
   	}
   }

@@ -99,6 +99,16 @@
   line-height: 1.7;
 }
 
+.node .content .img_url_dashed {
+  border-top: 6px dashed #ddd;
+  border-bottom: 6px dashed #ddd;
+  padding-top: 4px;
+}
+
+.node .content .subtitle {
+  text-align: right;
+}
+
 /* 文章详情页 */
 .page .article-row {
   padding: 30px 20px;
