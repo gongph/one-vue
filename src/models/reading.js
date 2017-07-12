@@ -17,5 +17,8 @@ export default {
   },
   getNextPageById (id) {
   	return instance.get(api.getNextReading.replace(reg, id));
+  },
+  getEssayById (id) {
+	return instance.get(api.getEssayById.replace(reg, id));
   }
 }

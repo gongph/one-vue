@@ -13,5 +13,8 @@ export default {
   },
   getNextPageById (id) {
     return instance.get(api.getNextMusic.replace(reg, id));
+  },
+  getMusicById (id) {
+    return instance.get(api.getMusicById.replace(reg, id));
   }
 }
