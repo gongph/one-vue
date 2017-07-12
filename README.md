@@ -22,15 +22,13 @@
   - `Framework7-Icons@0.8.9` [Github地址](https://github.com/nolimits4web/Framework7-Icons)
 
 ## 项目截图
-![home](./media/home.png =50%) 
 
-![reading](./media/reading.png =50%) 
-![reading-detail](./media/reading-detail.png =50%)
-
-![music](./media/music.png =50%) 
-
-![movie](./media/movie.png =50%) 
-![movie-detail](./media/movie-detail.png =50%)
+<img src="./media/home.png" width="50%"/>
+<img src="./media/reading.png" width="50%"/>
+<img src="./media/reading-detail.png" width="50%"/>
+<img src="./media/music.png" width="50%"/>
+<img src="./media/movie.png" width="50%"/>
+<img src="./media/movie-detail.png" width="50%"/>
 
 ## 如何在本地运行？
 
