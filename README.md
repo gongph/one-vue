@@ -21,6 +21,38 @@
 - 图标库
   - `Framework7-Icons@0.8.9` [Github地址](https://github.com/nolimits4web/Framework7-Icons)
 
+## 项目结构
+
+```bash
+.
+├── assets
+├── media
+├── node_modules
+├── src
+│    ├── api              # 数据接口
+│    ├── mixins           # Mixins
+│    ├── models
+│    ├── pages            # 页面
+│    ├── store 
+│    │     ├── modules    # 模块
+│    │     ├── actions.js # 全局 actions
+│    │     ├── getters.js # 全局 getters
+│    │     ├── index.js   # 入口文件
+│    │     └── mutation-types.js # 类型
+│    │
+│    ├── utils     # 工具文件夹
+│    ├── app.css   # 组件样式
+│    ├── app.js    # 入口文件
+│    ├── api.vue   # 根组件
+│    └── routes.js # 路由配置文件
+│
+├── build.js       # 编译后的文件
+├── index.html
+├── mainifest.json # app配置文件，需要配合 HBuilder 开发工具使用
+├── package.json
+├── webpack.config.js
+└── yarn.lock     
+```
 ## 项目截图
 
 <img src="./media/home.png" width="50%"/>
