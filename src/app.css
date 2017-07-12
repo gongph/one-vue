@@ -10,7 +10,34 @@
 .size-25 {font-size: 25px;}
 
 .navbar-fixed .page-content, .navbar-through .page-content {
-	background: #eee;
+  background: #eee;
+}
+
+.page .toolbar .toolbar-inner a {
+  color: #8e8e93;
+}
+
+.page .toolbar .toolbar-inner a.link:nth-child(1) {
+  padding-left: 12px;
+}
+
+.page .toolbar-inner a.link:nth-child(2) {
+  position: relative;
+  left: -10px;
+}
+
+.page .toolbar-inner a.link:nth-child(3) {
+  position: relative;
+  left: -20px;
+}
+
+.page .toolbar .toolbar-inner a.link .icon {
+  font-size: 17px;
+}
+
+.page .toolbar .toolbar-inner a:nth-child(4) {
+  font-size: 12px;
+  padding-right: 12px;
 }
 
 .row {
@@ -121,6 +148,10 @@
   margin: 15px 0;
 }
 
+.page .article .hp_m_title, .page .article .hp_m_story_author {
+  text-align: center;
+}
+
 .page .article .hp_content {
   text-align: justify;
   line-height: 2;
@@ -164,4 +195,20 @@
 
 .page .author_info .at_content .follow {
   float: right;
+}
+
+/* 电影 */
+
+.movie-page .movie-covers {
+  background: #fff;
+}
+
+.movie-page .movie-covers img {
+  height: 210px;
+}
+
+.movie-page .swiper-pagination-custom {
+  color: #fff;
+  text-align: right;
+  width: 98%;
 }
