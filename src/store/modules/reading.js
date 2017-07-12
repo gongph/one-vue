@@ -3,12 +3,18 @@ import * as types from '../mutation-types.js';
 
 // initial state
 const state = {
-  topten: []
+  topten: [],
+  article: {},
+  tag: '',
+  author: {}
 }
 
 // getters
 const  getters = {
-  topTen: state => state.topten
+  topten: state => state.topten,
+  article: state => state.article,
+  tag: state => state.tag,
+  author: state => state.author
 }
 
 // actions
@@ -22,6 +28,11 @@ const actions = {
   	server.getNextPageById(id).then((response) => {
       commit(types.RECEIVE_NEXTPAGE, response.data.data);
     });
+  },
+  getEssayById ({ commit }, id) {
+ 	  server.getEssayById(id).then(response => {
+ 	    commit(types.RECEIVE_ESSAY, response.data.data);
+ 	  });
   }
 }
 
@@ -33,6 +44,11 @@ const mutations = {
   },
   [types.RECEIVE_NEXTPAGE] (state, data) {
   	state.topten = state.topten.concat(data);
+  },
+  [types.RECEIVE_ESSAY] (state, data) {
+    state.article = data;
+    state.tag = data.tag_list.length > 0 ? data.tag_list[0].title : '';
+    state.author = data.author[0];
   }
 }
 

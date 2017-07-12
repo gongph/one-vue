@@ -5,7 +5,6 @@ import home from './modules/home.js';
 import reading from './modules/reading.js';
 import music from './modules/music.js';
 import movie from './modules/movie.js';
-import article from './modules/article.js';
 
 Vue.use(Vuex);
 
@@ -14,8 +13,7 @@ export default new Vuex.Store({
   	home,
     reading,
     music,
-    movie,
-    article
+    movie
   },
   //strict: true
 });
