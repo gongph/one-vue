@@ -3,7 +3,7 @@
   	navbar-through 
   	tabbar-through>
     <!-- navbar -->
-    <!--<f7-navbar>
+    <f7-navbar v-if="showNavbar">
     	<f7-nav-left>
     		<f7-link icon-f7="person" color="gray"></f7-link>
     	</f7-nav-left>
@@ -11,7 +11,7 @@
       <f7-nav-right>
       	<f7-link icon-f7="search" color="gray"></f7-link>
       </f7-nav-right>
-    </f7-navbar>-->
+    </f7-navbar>
     
     <!-- title -->
     <f7-grid>
@@ -83,24 +83,30 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import axios from 'axios';
 export default {
+	data () {
+	  showNavbar: false
+	},
 	computed: {
-		...mapGetters({
-		  todaydate: 'todaydate',
-		  climate: 'climate',
-		  poster: 'poster',
-		  nodes: 'nodes'
-	  }),
+		...mapGetters('home', [
+		  'todaydate',
+		  'climate',
+		  'poster',
+		  'nodes'
+	  ]),
 	  curDate () {
 	  	return this.todaydate.replace(/-/g, ' / ');
 	  }
 	},
 	created () {
-		this.$store.dispatch('getIdlist');
+		this.getIdlist();
 	},
 	methods: {
+		...mapActions('home', [
+		  'getIdlist'
+		]),
     getUserName (author) {
   	  return author? author.user_name : '';
     },

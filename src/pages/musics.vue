@@ -1,5 +1,13 @@
 <template>
-  <f7-page name="music" class="music-page" navbar-through tabbar-through>
+  <f7-page name="musics" class="musics-page" 
+  	navbar-through 
+  	tabbar-through 
+  	hide-navbar-on-scroll 
+  	pull-to-refresh 
+  	infinite-scroll 
+  	@ptr:refresh="pullrefresh"
+  	@ptr:pullend="pullend" 
+  	@infinite="infinite">
     <!-- navbar -->
     <f7-navbar>
     	<f7-nav-left>
@@ -14,7 +22,7 @@
     <!-- grids -->
     <f7-grid class="node-row" v-for="node in this.topten" key="node.id">
       <f7-col width="100">
-        <div class="node">
+        <div class="node" @click="loadDetailPage(node.item_id)">
         	<div class="header">
         	  <div class="category color-gray size-12">- 音乐 -</div>
         	  <div class="title size-20">{{ node.title }}</div>
@@ -40,20 +48,40 @@
 </template>
 
 <script>
+	import Mixins from '../mixins/mixins.vue';
 	import { mapGetters, mapActions } from 'vuex';
   export default {
+  	mixins: [Mixins],
     computed: {
-      ...mapGetters('music', {
-        topten: 'topTen'
-      })
+      ...mapGetters('music', [
+        'topten'
+      ])
     },
     created () {
       this.getTopTen();
     },
     methods: {
       ...mapActions('music', [
-  			'getTopTen'
-  		])
+  			'getTopTen',
+  			'getNextPageById'
+  		]),
+  		pullrefresh () {
+        this.getTopTen();
+      },
+      pullend () {
+        this.$root.$f7.pullToRefreshDone();
+      },
+      infinite () {
+	  	  let len = this.topten.length;
+	  	  if (len > 0) this.getNextPageById(this.topten[len - 1].id);
+  	  },
+  	  loadDetailPage (id) {
+    	  this.hideToolbar();
+    	  this.$root.$f7.getCurrentView().loadPage({ 
+    	  	url: `/music/${id}`,
+    	  	animatePages: false
+    	  });
+  	  },
     }
   }
 </script>

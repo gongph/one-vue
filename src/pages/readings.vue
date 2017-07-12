@@ -3,10 +3,10 @@
   	navbar-through 
   	tabbar-through 
   	hide-navbar-on-scroll 
-  	pull-to-refresh  
-  	infinite-scroll  
+  	pull-to-refresh 
+  	infinite-scroll 
   	@ptr:refresh="pullrefresh" 
-  	@ptr:pullend="pullend"  
+  	@ptr:pullend="pullend" 
   	@infinite="infinite">
     <!-- navbar -->
     <f7-navbar>
@@ -54,15 +54,18 @@
   
   export default {
   	mixins: [Mixins],
-    computed: mapGetters('reading', {
-		  topten: 'topTen'
-	  }),
+    computed: {
+      ...mapGetters('reading', [
+		    'topten'
+	    ])
+    },
   	created () {
   		this.getTopTen();
   	},
   	methods: {
   		...mapActions('reading', [
-  			'getTopTen'
+  			'getTopTen',
+  			'getNextPageById'
   		]),
   	  /**
   		 * 获取标签
@@ -100,7 +103,7 @@
   	   */
   	  infinite () {
 	  	  let len = this.topten.length;
-	  	  if (len > 0) this.$store.dispatch('reading/getNextPageById', this.topten[len - 1].id);
+	  	  if (len > 0) this.getNextPageById(this.topten[len - 1].id);
   	  }
   	}
   }
