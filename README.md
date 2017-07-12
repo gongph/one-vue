@@ -13,15 +13,24 @@
   - `vue@2.3.4`
 - 状态管理
   - `vuex@2.3.1`
+- 路由器
+  - Framework7封装的一套自己的[router](http://framework7.io/vue/navigation-router.html)
 - 前端UI库
-  - `Framework7@1.6.4`
-  - `Framework7-vue@0.9.2` 了解更多请移步[官网](http://framework7.io)
+  - `Framework7@1.6.4` [Framework7官网](http://framework7.io)
+  - `Framework7-vue@0.9.2`
 - 图标库
-  - `Framework7-Icons@0.8.9` Github地址点[这里](https://github.com/nolimits4web/Framework7-Icons)
+  - `Framework7-Icons@0.8.9` [Github地址](https://github.com/nolimits4web/Framework7-Icons)
 
 ## 项目截图
-![home](./media/home.png =50%) ![reading](./media/reading.png =50%) ![reading-detail](./media/reading-detail.png =50%)
-![music](./media/music.png =50%) ![movie](./media/movie.png =50%) ![movie-detail](./media/movie-detail.png =50%)
+![home](./media/home.png =50%) 
+
+![reading](./media/reading.png =50%) 
+![reading-detail](./media/reading-detail.png =50%)
+
+![music](./media/music.png =50%) 
+
+![movie](./media/movie.png =50%) 
+![movie-detail](./media/movie-detail.png =50%)
 
 ## 如何在本地运行？
 
