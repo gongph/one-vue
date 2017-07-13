@@ -20,5 +20,11 @@ export default {
   },
   getEssayById (id) {
 	return instance.get(api.getEssayById.replace(reg, id));
+  },
+  getSerialById (id) {
+    return instance.get(api.getSerialById.replace(reg, id));
+  },
+  getQuestionById (id) {
+    return instance.get(api.getQuestionById.replace(reg, id));
   }
 }
