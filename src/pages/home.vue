@@ -26,7 +26,7 @@
     
     <!-- 插画 -->
     <f7-grid>
-    	<f7-col width="100">
+      <f7-col width="100">
     	  <div class="poster">
     	    <div class="volume size-12">{{ this.poster.volume }}</div>
     	    <div class="img_url">
@@ -52,7 +52,7 @@
     	      <f7-icon f7="heart"></f7-icon>
     	    </f7-link>
     	  </div>
-    	</f7-col>
+      </f7-col>
     </f7-grid>
     
     <!-- 图文列表 -->
