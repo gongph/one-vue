@@ -84,7 +84,7 @@
   import Mixins from '../../mixins/mixins.vue';
   import { mapGetters, mapActions } from 'vuex';
   export default {
-    minxins: [Mixins],
+    mixins: [Mixins],
     computed: {
       ...mapGetters('reading', [
         'question',
