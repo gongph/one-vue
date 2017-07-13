@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="reading" class="reading-page" 
+  <f7-page name="readings" class="readings-page" 
   	navbar-through 
   	tabbar-through 
   	hide-navbar-on-scroll 
@@ -50,7 +50,7 @@
 <script>
 	import Mixins from '../mixins/mixins.vue';
   import { mapGetters, mapActions } from 'vuex';
-  import { getCategoryById } from '../utils/bytype.js';
+  import { getRouterByType } from '../utils/bytype.js';
   
   export default {
   	mixins: [Mixins],
@@ -77,12 +77,12 @@
   		 * 加载详情页
   		 */
   	  loadDetailPage (id, typeId) {
-  	  	let type = getCategoryById(typeId);
+  	  	let router = getRouterByType(typeId);
   	  	// 隐藏工具条
     	  this.hideToolbar();
   	  	
-    	  this.$root.$f7.getCurrentView().loadPage({ 
-    	  	url: `/reading/${type}/${id}`,
+    	  this.$root.$f7.getCurrentView().router.loadPage({ 
+    	  	url: router + id,
     	  	animatePages: false
     	  });
   	  },
