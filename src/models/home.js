@@ -3,7 +3,7 @@ import api from '../api';
 
 // create axios instance
 const instance = axios.create({
-	baseURL: api.baseURL
+  baseURL: api.baseURL
 });
 
 const reg = /\{(.+)\}/ig;
@@ -13,9 +13,9 @@ export default {
    * 获取首页idlist
    */
   getIdlist () {
-	return instance.get(api.idlist);
+    return instance.get(api.idlist);
   },
   getHpById (id) {
-  	return instance.get(api.getHpById.replace(reg, id));
+    return instance.get(api.getHpById.replace(reg, id));
   }
 }

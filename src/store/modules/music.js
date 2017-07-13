@@ -27,26 +27,25 @@ const actions = {
     });
   },
   getMusicById ({ commit }, id) {
-  	console.log('coming...');
     server.getMusicById(id).then(response => {
-    	commit(types.RECEIVE_MUSIC, response.data.data);
+      commit(types.RECEIVE_MUSIC, response.data.data);
     });
   }
 }
 
 const mutations = {
   [types.RECEIVE_TOPTEN] (state, data) {
-  	state.topten.length = 0;
+    state.topten.length = 0;
     state.topten = data;
   },
   [types.RECEIVE_NEXTPAGE] (state, data) {
-  	state.topten = state.topten.concat(data);
+    state.topten = state.topten.concat(data);
   },
   [types.RECEIVE_MUSIC] (state, data) {
-  	state.article = data;
-  	state.author = data.author;
-  	state.storyAuthor = data.story_author
-  },
+    state.article = data;
+    state.author = data.author;
+    state.storyAuthor = data.story_author
+  }
 }
 
 export default {

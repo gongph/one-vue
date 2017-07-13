@@ -3,7 +3,7 @@ import $ from 'jquery';
 import api from '../api';
 
 const instance = axios.create({
-	baseURL: api.baseURL
+  baseURL: api.baseURL
 });
 
 const reg = /\{(.+)\}/ig;
@@ -19,14 +19,14 @@ export default {
     return instance.get(api.getMovieById.replace(reg, id));
   },
   getMoviePhotosById (id, cb) {
-  	$.ajax({
-  	  url: api.baseURL + api.getMoviePhotosById.replace(reg, id),
-  	  async: false,
-  	  type: 'GET',
-  	  dataType: 'JSON',
-  	  success: function (response) {
-  	    cb(response.data);
-  	  }
-  	});
+    $.ajax({
+      url: api.baseURL + api.getMoviePhotosById.replace(reg, id),
+      async: false,
+      type: 'GET',
+      dataType: 'JSON',
+      success: function (response) {
+        cb(response.data);
+      }
+    });
   }
 }

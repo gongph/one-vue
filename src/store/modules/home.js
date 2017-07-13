@@ -26,14 +26,14 @@ const actions = {
     });
   },
   getHpById ({ dispatch, commit, state }, id) {
-  	serve.getHpById(id).then(response => {
-		  let hp = response.data.data;
-			commit(types.RECEIVE_HP, hp);
-			dispatch('weather', hp);
-		});
+    serve.getHpById(id).then(response => {
+      let hp = response.data.data;
+      commit(types.RECEIVE_HP, hp);
+      dispatch('weather', hp);
+    });
   },
   weather ({ commit }, hp) {
-  	commit(types.WEATHER, hp);
+    commit(types.WEATHER, hp);
   }
 }
 
@@ -42,20 +42,20 @@ const mutations = {
     state.idlist = data;
   },
   [types.RECEIVE_HP] (state, data) {
-  	state.hp = data;
-  	// 文章列表
-  	state.nodes = data.content_list;
-  	//获取最新一天的海报
-  	state.poster = data.content_list[0];
+    state.hp = data;
+    // 文章列表
+    state.nodes = data.content_list;
+    //获取最新一天的海报
+    state.poster = data.content_list[0];
   },
   [types.WEATHER] (state, hp) {
-  	state.todaydate = hp.weather.date;
-  	state.climate = hp.weather.climate + ', ' + hp.weather.city_name;
+    state.todaydate = hp.weather.date;
+    state.climate = hp.weather.climate + ', ' + hp.weather.city_name;
   }
 }
 
 export default {
-	namespaced: true,
+  namespaced: true,
   state,
   getters,
   actions,

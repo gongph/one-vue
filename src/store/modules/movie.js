@@ -42,22 +42,22 @@ const actions = {
 
 const mutations = {
   [types.RECEIVE_TOPTEN] (state, data) {
-  	state.topten.length = 0;
+    state.topten.length = 0;
     state.topten = data;
   },
   [types.RECEIVE_NEXTPAGE] (state, data) {
-  	state.topten = state.topten.concat(data);
+    state.topten = state.topten.concat(data);
   },
   [types.RECEIVE_MOVIE] (state, data) {
-  	state.article = data;
-  	state.author = data.user;
+    state.article = data;
+    state.author = data.user;
   },
   [types.RECEIVE_MOVIE_PHOTOS] (state, data) {
-  	state.detail = data;
-  	
-  	state.photos.length = 0;
-  	state.photos = data.photo;
-  },
+    state.detail = data;
+    
+    state.photos.length = 0;
+    state.photos = data.photo;
+  }
 }
 
 export default {
