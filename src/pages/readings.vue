@@ -84,10 +84,13 @@
       pullend () {
         this.$root.$f7.pullToRefreshDone();
       },
+      /**
+       * 无限滚动
+       */
       infinite () {
         let len = this.topten.length;
         if (len > 0) this.getNextPageById(this.topten[len - 1].id);
       }
-  	}
+    }
   }
 </script>
