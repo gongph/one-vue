@@ -4,12 +4,12 @@
   	tabbar-through>
   	<!-- navbar -->
     <f7-navbar>
-    	<f7-nav-left>
-    		<f7-link back icon-f7="left" color="gray" @click="showToolbar"></f7-link>
-    	</f7-nav-left>
+      <f7-nav-left>
+        <f7-link back icon-f7="left" color="gray" @click="showToolbar"></f7-link>
+      </f7-nav-left>
       <f7-nav-center sliding>阅读·问答</f7-nav-center>
       <f7-nav-right>
-      	<f7-link icon-f7="share" color="gray"></f7-link>
+        <f7-link icon-f7="share" color="gray"></f7-link>
       </f7-nav-right>
     </f7-navbar>
     
@@ -42,9 +42,9 @@
           
           <!-- 回答者 -->
       	  <div class="author_info">
-      		<div class="at_title">回答者</div>
-      		<div class="at_split"></div>
-      		<ul class="at_content">
+      	    <div class="at_title">回答者</div>
+      	    <div class="at_split"></div>
+      	    <ul class="at_content">
       		  <li class="web_url">
       		    <img :src="this.answerer.web_url" width="32" height="32"/>
       		  </li>
@@ -55,7 +55,7 @@
       		  <li class="follow">
       		    <f7-button color="gray" class="size-12">关注</f7-button>
       		  </li>
-      		</ul>
+            </ul>
           </div>
         </div>
       </f7-col>
