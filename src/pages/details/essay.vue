@@ -23,27 +23,27 @@
       	  <div class="hp_author size-16">文╱{{ this.article.hp_author }}</div>
       	  <div class="hp_content size-16" v-html="this.article.hp_content"></div>
       	  <template v-if="this.article.hp_author_introduce">
-      		  <div class="hp_author_introduce size-12 color-gray">
-      			  {{ this.article.hp_author_introduce.replace(/（|）/g, '') }}
-      		  </div>
+      	    <div class="hp_author_introduce size-12 color-gray">
+      	      {{ this.article.hp_author_introduce.replace(/（|）/g, '') }}
+      	    </div>
       	  </template>
       	  
-      		<!-- 作者 -->
+      	  <!-- 作者 -->
       	  <div class="author_info">
-      		  <div class="at_title">作者</div>
-      		  <div class="at_split"></div>
-      		  <ul class="at_content">
-      		    <li class="web_url">
-      		      <img :src="this.author.web_url" width="32" height="32"/>
-      		    </li>
-      		    <li class="wb_name">
-      		      <span>{{ this.author.user_name }} {{ this.author.wb_name }}</span>
-      		      <small class="size-12 color-gray">{{ this.author.summary }}</small>
-      		    </li>
-      		    <li class="follow">
-      		      <f7-button color="gray" class="size-12">关注</f7-button>
-      		    </li>
-      		  </ul>
+      	    <div class="at_title">作者</div>
+      	    <div class="at_split"></div>
+      	    <ul class="at_content">
+      	      <li class="web_url">
+      	        <img :src="this.author.web_url" width="32" height="32"/>
+      	      </li>
+      	      <li class="wb_name">
+      	        <span>{{ this.author.user_name }} {{ this.author.wb_name }}</span>
+      	        <small class="size-12 color-gray">{{ this.author.summary }}</small>
+      	      </li>
+      	      <li class="follow">
+      	        <f7-button color="gray" class="size-12">关注</f7-button>
+      	      </li>
+      	    </ul>
       	  </div>
       	</div>
       </f7-col>
@@ -86,7 +86,7 @@
     methods: {
       ...mapActions('reading', [
     	  'getEssayById'
-    	]),
+      ]),
       bookmark () {
       	this.$root.$f7.modal({
       	  text: '已收藏，可至个人中心收藏中查看'
