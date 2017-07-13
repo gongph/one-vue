@@ -5,9 +5,9 @@
   	
     <!-- navbar -->
     <f7-navbar v-if="showNavbar">
-    	<f7-nav-left>
-    	  <f7-link icon-f7="person" color="gray"></f7-link>
-    	</f7-nav-left>
+      <f7-nav-left>
+        <f7-link icon-f7="person" color="gray"></f7-link>
+      </f7-nav-left>
       <f7-nav-center sliding>一个</f7-nav-center>
       <f7-nav-right>
       	<f7-link icon-f7="search" color="gray"></f7-link>
@@ -16,42 +16,42 @@
     
     <!-- 日期标题 -->
     <f7-grid>
-    	<f7-col width="100">
-    	  <div class="weather">
-    	    <div class="date size-17">{{ this.curDate }}</div>
-    	    <div class="climate size-12">{{ this.climate }}</div>
-    		</div>
-    	</f7-col>
+      <f7-col width="100">
+        <div class="weather">
+          <div class="date size-17">{{ this.curDate }}</div>
+          <div class="climate size-12">{{ this.climate }}</div>
+        </div>
+      </f7-col>
     </f7-grid>
     
     <!-- 插画 -->
     <f7-grid>
       <f7-col width="100">
         <div class="poster">
-    	    <div class="volume size-12">{{ this.poster.volume }}</div>
-    	    <div class="img_url">
-    	      <img :src="this.poster.img_url" width="100%" class="lazy lazy-fadein"/>
-    	    </div>
-    	    <div class="pic_info color-gray size-12">
-    	      {{ this.poster.title + ' | ' + this.poster.pic_info}}
-    	    </div>
-    	    <div class="forward">
-    	      {{ this.poster.forward }}
-    	    </div>
-    	    <div class="words_info color-gray size-12">
-    	      {{ this.poster.words_info }}
-    	    </div>
-    	  </div>
-    	  <div class="footerbar note">
-    	    <f7-link no-link-class>
-    	      <f7-icon f7="compose"></f7-icon> 小记
-    	    </f7-link>
-    	    <f7-link icon-f7="share"></f7-link>
-    	    <f7-link>
-    	      {{ this.poster.like_count }}
-    	      <f7-icon f7="heart"></f7-icon>
-    	    </f7-link>
-    	  </div>
+          <div class="volume size-12">{{ this.poster.volume }}</div>
+          <div class="img_url">
+            <img :src="this.poster.img_url" width="100%" class="lazy lazy-fadein"/>
+          </div>
+          <div class="pic_info color-gray size-12">
+            {{ this.poster.title + ' | ' + this.poster.pic_info}}
+          </div>
+          <div class="forward">
+            {{ this.poster.forward }}
+          </div>
+          <div class="words_info color-gray size-12">
+            {{ this.poster.words_info }}
+          </div>
+        </div>
+        <div class="footerbar note">
+          <f7-link no-link-class>
+            <f7-icon f7="compose"></f7-icon> 小记
+          </f7-link>
+          <f7-link icon-f7="share"></f7-link>
+          <f7-link>
+            {{ this.poster.like_count }}
+            <f7-icon f7="heart"></f7-icon>
+          </f7-link>
+        </div>
       </f7-col>
     </f7-grid>
     
