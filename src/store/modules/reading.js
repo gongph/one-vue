@@ -4,7 +4,11 @@ import * as types from '../mutation-types.js';
 // initial state
 const state = {
   topten: [],
-  article: {},
+  article: {}, // 文章
+  serial: {}, // 连载
+  question: {}, // 问答
+  asker: {}, // 提问者
+  answerer: {}, // 回答者
   tag: '',
   author: {}
 }
@@ -13,6 +17,10 @@ const state = {
 const  getters = {
   topten: state => state.topten,
   article: state => state.article,
+  serial: state => state.serial,
+  question: state => state.question,
+  asker: state => state.asker,
+  answerer: state => state.answerer,
   tag: state => state.tag,
   author: state => state.author
 }
@@ -33,6 +41,16 @@ const actions = {
  	  server.getEssayById(id).then(response => {
  	    commit(types.RECEIVE_ESSAY, response.data.data);
  	  });
+  },
+  getSerialById ({ commit }, id) {
+    server.getSerialById(id).then(response => {
+      commit(types.RECEIVE_SERIAL, response.data.data);
+    });
+  },
+  getQuestionById ({ commit }, id) {
+    server.getQuestionById(id).then(response => {
+      commit(types.RECEIVE_QUESTION, response.data.data);
+    });
   }
 }
 
@@ -49,6 +67,14 @@ const mutations = {
     state.article = data;
     state.tag = data.tag_list.length > 0 ? data.tag_list[0].title : '';
     state.author = data.author[0];
+  },
+  [types.RECEIVE_SERIAL] (state, data) {
+  	state.serial = data;
+  },
+  [types.RECEIVE_QUESTION] (state, data) {
+  	state.question = data;
+  	state.asker = data.asker;
+  	state.answerer = data.answerer;
   }
 }
 
