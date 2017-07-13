@@ -2,7 +2,8 @@
   <f7-page name="question" class="question-page" 
   	navbar-through 
   	tabbar-through>
-  	<!-- navbar -->
+    
+    <!-- navbar -->
     <f7-navbar>
       <f7-nav-left>
         <f7-link back icon-f7="left" color="gray" @click="showToolbar"></f7-link>
@@ -45,16 +46,16 @@
       	    <div class="at_title">回答者</div>
       	    <div class="at_split"></div>
       	    <ul class="at_content">
-      		  <li class="web_url">
-      		    <img :src="this.answerer.web_url" width="32" height="32"/>
-      		  </li>
-      		  <li class="wb_name">
-      		    <span>{{ this.answerer.user_name }} {{ this.answerer.wb_name }}</span>
-      		    <small class="size-12 color-gray">{{ this.answerer.summary }}</small>
-      		  </li>
-      		  <li class="follow">
-      		    <f7-button color="gray" class="size-12">关注</f7-button>
-      		  </li>
+      	      <li class="web_url">
+      	        <img :src="this.answerer.web_url" width="32" height="32"/>
+      	      </li>
+      	      <li class="wb_name">
+      	        <span>{{ this.answerer.user_name }} {{ this.answerer.wb_name }}</span>
+      	        <small class="size-12 color-gray">{{ this.answerer.summary }}</small>
+      	      </li>
+      	      <li class="follow">
+      	        <f7-button color="gray" class="size-12">关注</f7-button>
+      	      </li>
             </ul>
           </div>
         </div>
