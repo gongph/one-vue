@@ -212,3 +212,59 @@
   text-align: right;
   width: 98%;
 }
+
+/* 阅读 问答*/
+.page .question-row {
+  padding-bottom: 10px;
+}
+
+.page .question {
+  padding: 10px 12px;
+}
+
+.page .question .split {
+  padding: 10px 0;
+}
+
+.page .question .split div {
+  float: left;
+}
+
+.page .question .split .l_s, .page .question .split .r_s {
+  width: 48%;
+  height: 2px;
+  background: #eee;
+}
+
+.page .question .split .c_c {
+  width: 4%;
+  height: 10px;
+}
+
+.page .question .split .c_c span:before {
+  content: ' ';
+}
+
+.page .question .split .c_c div {
+  background: #ddd;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin: -2px 0 0px 3px;
+}
+
+.page .question .answerer {
+  padding: 20px 0 0 0;
+}
+
+.page .question .answer_content {
+  text-align: justify;
+  line-height: 2;
+}
+
+.page .question .underline {
+  height: 1px;
+  width: 100%;
+  background: #eee;
+  margin: 35px 0 15px 0;
+}
