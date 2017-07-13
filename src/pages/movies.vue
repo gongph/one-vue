@@ -81,8 +81,8 @@
       infinite () {
         let len = this.topten.length;
         if (len > 0) this.getNextPageById(this.topten[len - 1].id);
-  	  },
-  	  loadDetailPage (id) {
+      },
+      loadDetailPage (id) {
   	    this.hideToolbar();
   	    this.$root.$f7.getCurrentView().loadPage({
   	      url: `/movie/${id}`,
