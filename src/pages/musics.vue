@@ -66,7 +66,7 @@
         'getTopTen',
         'getNextPageById'
       ]),
-  		pullrefresh () {
+      pullrefresh () {
         this.getTopTen();
       },
       pullend () {
