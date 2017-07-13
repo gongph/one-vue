@@ -1,5 +1,3 @@
-import api from '../api';
-
 /**
  * 根据 type 获取路由url
  * @param {String} type 文章类型
@@ -36,3 +34,4 @@ const getCategoryByType = function (type) {
 }
 
 export { getCategoryByType };
+
