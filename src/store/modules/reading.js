@@ -70,6 +70,7 @@ const mutations = {
   },
   [types.RECEIVE_SERIAL] (state, data) {
   	state.serial = data;
+  	state.author = data.author;
   },
   [types.RECEIVE_QUESTION] (state, data) {
   	state.question = data;
