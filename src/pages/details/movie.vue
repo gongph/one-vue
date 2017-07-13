@@ -27,16 +27,16 @@
       <f7-col width="100">
         <div class="article">
           <div class="hp_m_title color-gray size-14">
-          	<p>· {{ this.detail.title }} ·</p>
+            <p>· {{ this.detail.title }} ·</p>
           </div>
           <div class="hp_title size-25">{{ this.article.title }}</div>
       	  <div class="hp_split"></div>
       	  <div class="hp_author size-16">文╱{{ this.author.user_name }}</div>
           <div class="hp_content size-16" v-html="this.article.content"></div>
           <template v-if="this.detail.charge_edt">
-      		<div class="hp_author_introduce size-12 color-gray">
-      		  {{ this.detail.charge_edt.replace(/（|）/g, '') }} 
-      		</div>
+            <div class="hp_author_introduce size-12 color-gray">
+              {{ this.detail.charge_edt.replace(/（|）/g, '') }} 
+            </div>
       	  </template>
         </div>
       </f7-col>
@@ -86,7 +86,6 @@
       let id = this.$route.params.id;
       this.getMoviePhotosById(id);
       this.getMovieById(id);
-       
     },
     methods: {
       ...mapActions('movie', [
