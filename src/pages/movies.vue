@@ -83,12 +83,12 @@
         if (len > 0) this.getNextPageById(this.topten[len - 1].id);
       },
       loadDetailPage (id) {
-  	    this.hideToolbar();
-  	    this.$root.$f7.getCurrentView().loadPage({
-  	      url: `/movie/${id}`,
-  	      animatePages: false
-  	    });
-  	  }
+        this.hideToolbar();
+        this.$root.$f7.getCurrentView().loadPage({
+          url: `/movie/${id}`,
+          animatePages: false
+        });
+      }
     }
   }
 </script>
