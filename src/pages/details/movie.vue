@@ -1,7 +1,7 @@
 <template>
   <f7-page name="movie" class="movie-page" 
-  	navbar-through 
-  	tabbar-through>
+    navbar-through 
+    tabbar-through>
     
     <!-- navbar -->
     <f7-navbar>
@@ -61,7 +61,7 @@
   </f7-page>
 </template>
 
-<script type="text/javascript">
+<script>
   import Mixins from '../../mixins/mixins.vue';
   import { mapGetters, mapActions } from 'vuex';
   export default {

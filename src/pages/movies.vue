@@ -1,13 +1,13 @@
 <template>
   <f7-page name="movies" class="movies-page" 
-  	navbar-through 
-  	tabbar-through 
-  	hide-navbar-on-scroll 
-  	pull-to-refresh 
-  	infinite-scroll 
-  	@ptr:refresh="pullrefresh"
-  	@ptr:pullend="pullend" 
-  	@infinite="infinite">
+    navbar-through 
+    tabbar-through 
+    hide-navbar-on-scroll 
+    pull-to-refresh 
+    infinite-scroll 
+    @ptr:refresh="pullrefresh" 
+    @ptr:pullend="pullend" 
+    @infinite="infinite">
   	
     <!-- navbar -->
     <f7-navbar>

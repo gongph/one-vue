@@ -1,7 +1,7 @@
 <template>
   <f7-page ref="homepage" name="home" class="home-page" 
-  	navbar-through 
-  	tabbar-through>
+    navbar-through 
+    tabbar-through>
   	
     <!-- navbar -->
     <f7-navbar v-if="showNavbar">

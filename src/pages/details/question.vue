@@ -1,7 +1,7 @@
 <template>
   <f7-page name="question" class="question-page" 
-  	navbar-through 
-  	tabbar-through>
+    navbar-through 
+    tabbar-through>
     
     <!-- navbar -->
     <f7-navbar>
