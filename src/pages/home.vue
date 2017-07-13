@@ -27,7 +27,7 @@
     <!-- 插画 -->
     <f7-grid>
       <f7-col width="100">
-    	  <div class="poster">
+        <div class="poster">
     	    <div class="volume size-12">{{ this.poster.volume }}</div>
     	    <div class="img_url">
     	      <img :src="this.poster.img_url" width="100%" class="lazy lazy-fadein"/>
