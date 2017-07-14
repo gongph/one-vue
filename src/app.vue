@@ -3,7 +3,7 @@
     <f7-statusbar></f7-statusbar>
     <!-- views -->
     <f7-views tabs toolbar-through theme="black" layout="white">
-      <f7-view main tab active url="/home/"></f7-view>
+      <f7-view main tab active url="/home/" :domCache="false"></f7-view>
       
       <f7-toolbar tabbar class="global-toolbar">
         <f7-link @click="loadpage($event, '/home/')" tab-link active no-link-class icon-f7="home"></f7-link>
