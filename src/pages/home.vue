@@ -87,8 +87,14 @@
   import Mixins from '../mixins/mixins.vue';
   import { mapGetters, mapActions } from 'vuex';
   import { getRouterByType, getCategoryByType } from '../utils/bytype.js';
+  import { bindEvent, unBindEvent } from '../utils/events.js';
   export default {
     mixins: [Mixins],
+    data () {
+      return {
+        pageSelector: '.page .page-content'
+      }
+    },
     computed: {
       ...mapGetters('home', [
         'todaydate',
@@ -102,9 +108,13 @@
     },
     created () {
       this.getIdlist();
+      unBindEvent(this.pageSelector, 'scroll');
     },
     mounted () {
-      this.handleNavbarShowHide();
+      this.hideNavbar();
+      bindEvent(this.pageSelector, 'scroll', (e) => {
+        this.handleNavbarShowHide(e);
+      });
     },
     methods: {
       ...mapActions('home', [
@@ -130,15 +140,8 @@
         animatePages: false
       });
     },
-    handleNavbarShowHide () {
-      // 获取当前视图
-      let mainView = this.$root.$f7.getCurrentView();
-      // 默认隐藏导航栏
-      mainView.hideNavbar();
-      // 监听滚动事件
-      window.document.querySelector('.home-page .page-content').addEventListener('scroll', function (e) {
-        e.target.scrollTop <= 0 ? mainView.hideNavbar() : mainView.showNavbar();
-      })
+    handleNavbarShowHide (e) {
+      e.target.scrollTop <= 0 ? this.hideNavbar() : this.showNavbar();
     }
   }
 }
