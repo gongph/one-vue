@@ -4,7 +4,7 @@
     tabbar-through>
   	
     <!-- navbar -->
-    <f7-navbar v-if="showNavbar">
+    <f7-navbar>
       <f7-nav-left>
         <f7-link icon-f7="person" color="gray"></f7-link>
       </f7-nav-left>
@@ -15,7 +15,7 @@
     </f7-navbar>
     
     <!-- 日期标题 -->
-    <f7-grid>
+    <f7-grid class="tt">
       <f7-col width="100">
         <div class="weather">
           <div class="date size-17">{{ this.curDate }}</div>
@@ -89,9 +89,6 @@
   import { getRouterByType, getCategoryByType } from '../utils/bytype.js';
   export default {
     mixins: [Mixins],
-    data () {
-      showNavbar: false
-    },
     computed: {
       ...mapGetters('home', [
         'todaydate',
@@ -105,6 +102,9 @@
     },
     created () {
       this.getIdlist();
+    },
+    mounted () {
+      this.handleNavbarShowHide();
     },
     methods: {
       ...mapActions('home', [
@@ -129,6 +129,16 @@
         url: router + node.item_id,
         animatePages: false
       });
+    },
+    handleNavbarShowHide () {
+      // 获取当前视图
+      let mainView = this.$root.$f7.getCurrentView();
+      // 默认隐藏导航栏
+      mainView.hideNavbar();
+      // 监听滚动事件
+      window.document.querySelector('.home-page .page-content').addEventListener('scroll', function (e) {
+        e.target.scrollTop <= 0 ? mainView.hideNavbar() : mainView.showNavbar();
+      })
     }
   }
 }
