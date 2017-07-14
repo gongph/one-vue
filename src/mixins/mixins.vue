@@ -1,7 +1,7 @@
 <script>
   export default {
     methods: {
-    	// 隐藏工具栏
+      // 隐藏工具栏
       hideToolbar () {
         this.$root.$$('.global-toolbar').hide();
       },
